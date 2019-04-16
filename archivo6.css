@@ -1,0 +1,251 @@
+/*
+* El "*" representa todo lo que hay en nuestro html, el "." representa las clases, el "#" los id y si no ponemos nada
+* como en el caso de DIV es porque es un contenedor ya definido
+*/
+
+
+/**
+* Asigna a todos los valores tabulación 0, margen 0, texto al centro,
+* color azul, sombra negra con opacidad 0.3 ("rgba" surge en css3 para poder aplicar opacidad en el valor alpha (su último valor)),
+* fuente Cambria y un espacio entre letras de 2 pixeles
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: blue;
+    text-shadow: 5px 5px 5px rgba(7, 7, 7, 0.3);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 2px;
+}
+
+
+/**
+* Hace que lo sobrante de la página en el eje x, no aparezca. (No se puede scrollear hacia los costados)
+*/
+
+body {
+    overflow-x: hidden;
+}
+
+p {
+    font-size: 50px;
+    margin-top: 500px;
+    margin-bottom: 500px;
+}
+
+
+/**
+* Le agrego un margen de inicio, una altura y ancho a la sección, un top (distancia con el tope de la página) para usar la posición "sticky"
+* (es la variable que hace que quede posicionado como un header hasta que choca con el siguiente div o #wrapper)
+*/
+
+h1 {
+    margin-block-start: 30px;
+    height: 20%;
+    width: 100%;
+    top: 70px;
+    position: sticky;
+    color: red;
+}
+
+
+/**
+* Uso % de margen para que sea responsive
+*/
+
+h1.ti {
+    margin-left: -35%;
+}
+
+h1.de {
+    margin-left: 0%;
+}
+
+h1.la {
+    margin-left: 35%;
+}
+
+h2 {
+    font-size: 70px;
+    margin-top: 1000;
+}
+
+
+/**
+* El "nth-of-type(1)" accede a los tipos (en este caso h2) y al primero (1) le asigna las siguiente propiedades
+* aplica la animación con el nombre "h2-1", le aplica una duración de 5 segundos y hace que itere infinitamente
+*/
+
+h2:nth-of-type(1) {
+    animation-name: h2-1;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+h2:nth-of-type(2) {
+    margin-top: 50px;
+    text-shadow: none;
+    color: black;
+    animation-name: h2-2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+
+/*
+* Agrega la imagen, le da un tamaño cover que se ajusta a la resolución de la pantalla, se centra a la ventana para que sea resposive,
+* hace que no se repita y le da la propiedad attachment fixed que la hace interactiva al scroll de la página
+* (O sea que cuando bajamos con la ruedita esta imagen se muestra según su posición en la pantalla)
+*/
+
+.img1 {
+    background-image: url(imagen/imagen1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.img2 {
+    background-image: url(imagen/imagen2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.img3 {
+    background-image: url(imagen/imagen3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/*
+* Le asigno asigno la altura y el ancho a esas clases, le asigno un tope para la posición "sticky"
+* y finalmente le doy un sombreado a la caja contenedora
+*/
+
+.img1,
+.img2,
+.img3 {
+    height: 20%;
+    width: 100%;
+    top: 0px;
+    position: sticky;
+    box-shadow: 0px 0px 10px 5px rgba(7, 7, 7, 0.3);
+}
+
+
+/* POSICIONES
+* La posición "relative" significa que es relativa a su contenedor. En el caso de poner un objeto relative con top 0 y left 0, pero el div en el que se encuentra
+* tiene un top del 20% y un left del 50%, este objeto relative se posicionaría al 20% del top y 50% del left.
+* Caso diferente sería con posición "absolute", que se posiciona en un lugar absoluto de la página (no de lo que estamos viendo, sino de la página total).
+* Un ejemplo de posición absoluta sería si tenemos una página de 10mil pixeles de altura y ponemos una posición absoluta con un bottom de 10%
+* vamos a tener que scrollear hasta abajo de la página para poder ver este elemento a los 9mil pixeles.
+* Por último tenemos la posición "fixed" que este si se posiciona en el "viewport" que sería lo que estamos viendo en la pantalla.
+* Por lo tanto si lo ponemos con un bottom del 10%, siempre vamos a tener el elemento en la pantalla a una distancia del 10% de la parte inferior
+*/
+
+div {
+    position: relative;
+}
+
+
+/*
+* Acá lo que agregamos que es nuevo es el "animation-timing-function" que dicta el los tiempos de corte en esa animación
+* Si nosotros tenemos una animación con varios cortes y queremos que no destaque esos cortes con una pausa, usamos el cubic-bezier para sacar los tiempos de corte
+* o prolongarlos si así quisieramos
+*/
+
+a {
+    font-family: 'Times New Roman', Times, serif;
+    font: bold;
+    font-size: 40px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    text-align: center;
+    margin-top: 50%;
+    margin-bottom: 15%;
+    animation-name: a;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0, 0, 0, 0);
+}
+
+
+/*
+* El "hover" actúa cuando señalamos con el puntero un objeto, en este caso cambia su color a amarillo
+*/
+
+a:hover {
+    color: yellow;
+}
+
+
+/*
+* Los keyframes los usamos para hacer animaciones, elegimos su nombre después de poner "@keyframes", declaramos sus puntos de corte
+* y dentro de ellos sus acciones.
+* La propiedad "transform" sirve para modificar el elemento al que aplicamos la animación como "rotate" que gira el elemento cierta cantidad de grados
+* o "scale" que reduce o aumenta su tamaño
+*/
+
+@keyframes h2-1 {
+    50% {
+        transform: rotate(180deg) scale(0.4);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+
+/*
+* Acá podemos ver que le podemos aplicar al texto tantas sombras como queramos
+*/
+
+@keyframes h2-2 {
+    50% {
+        color: rgb(0, 17, 255, 0);
+        text-shadow: -10px 10px 5px rgba(252, 235, 0, 0.3), 10px 10px 5px rgba(73, 255, 2, 0.3), -10px -10px 5px rgba(208, 6, 248, 0.3), 10px -10px 5px rgba(250, 113, 1, 0.3);
+    }
+    100% {
+        /**
+        * Vuelve automáticamente a como estaba
+        */
+    }
+}
+
+
+/*
+* El valor "translate" sirve para cambiar de lugar un elemento a la posición que deseemos
+*/
+
+@keyframes a {
+    25% {
+        transform: translate(-30%);
+    }
+    33% {
+        color: red;
+    }
+    50% {
+        transform: translate(0%);
+    }
+    66% {
+        color: yellow;
+    }
+    75% {
+        transform: translate(30%);
+    }
+    100% {
+        transform: translate(0%);
+        color: blue;
+    }
+}

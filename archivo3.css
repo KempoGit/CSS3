@@ -1,0 +1,95 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: blue;
+}
+
+h1 {
+    margin-top: 500px;
+}
+
+h2 {
+    margin-bottom: 500px;
+}
+
+.img1 {
+    background-image: url(imagen/imagen1.jpg);
+    background-position: 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.img2 {
+    background-image: url(imagen/imagen2.jpg);
+    background-position: 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.img3 {
+    background-image: url(imagen/imagen3.jpg);
+    background-position: 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.img4 {
+    background-image: url(imagen/imagen4.jpg);
+    background-position: 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.img5 {
+    background-image: url(imagen/imagen5.jpg);
+    background-position: 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.img6 {
+    background-image: url(imagen/imagen6.jpg);
+    background-position: 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.img7 {
+    background-image: url(imagen/imagen7.jpg);
+    background-position: 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.img1,
+.img2,
+.img3,
+.img4,
+.img5,
+.img6,
+.img7 {
+    height: 30%;
+    width: 100%;
+    position: relative;
+}
+
+div {
+    position: relative;
+}
+
+a {
+    font-family: 'Times New Roman', Times, serif;
+    font: bold;
+    font-size: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    text-align: center;
+    margin-bottom: 25%
+}
+
+a:hover {
+    color: yellow;
+}

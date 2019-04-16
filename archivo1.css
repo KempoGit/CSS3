@@ -1,0 +1,67 @@
+* {
+    margin: 0px;
+}
+
+h2 {
+    color: #fff;
+    text-align: center;
+    font-family: "Luna";
+}
+
+#section1 {
+    background: url(imagen/imagen1.jpg) 50% 0px no-repeat fixed;
+}
+
+#section2 {
+    background: url(imagen/imagen2.jpg) 50% 0px no-repeat fixed;
+}
+
+#section3 {
+    background: url(imagen/imagen3.jpg) 50% 0px no-repeat fixed;
+}
+
+#section4 {
+    background: url(imagen/imagen4.jpg) 50% 0px no-repeat fixed;
+}
+
+#section5 {
+    background: url(imagen/imagen5.jpg) 50% 0px no-repeat fixed;
+}
+
+#section1,
+#section2,
+#section3,
+#section4,
+#section5 {
+    margin: 0px;
+    max-width: 1920px;
+    min-height: 1080px;
+    position: relative;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+div {
+    position: relative;
+}
+
+a {
+    font-family: 'Times New Roman', Times, serif;
+    font: bold;
+    font-size: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    text-align: center;
+    margin-bottom: 25%
+}
+
+a:hover {
+    color: yellow;
+}
